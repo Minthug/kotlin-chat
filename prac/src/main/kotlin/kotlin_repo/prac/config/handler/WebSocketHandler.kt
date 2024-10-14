@@ -1,8 +1,11 @@
 package kotlin_repo.prac.config.handler
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import kotlin_repo.prac.common.ChatRequest
+import kotlin_repo.prac.common.ChatResponse
+import kotlin_repo.prac.domain.repository.Chat
+import kotlin_repo.prac.domain.repository.ChatRepository
 import org.springframework.stereotype.Component
-import org.springframework.web.context.request.WebRequest
 import org.springframework.web.socket.CloseStatus
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
@@ -14,6 +17,7 @@ class WebSocketHandler(
 
     private val objectMapper: ObjectMapper,
     private val sessions: MutableSet<WebSocketSession> = HashSet(),
+    private val chatRepository: ChatRepository,
 ) : TextWebSocketHandler() {
 
     override fun afterConnectionEstablished(session: WebSocketSession) {
@@ -36,7 +40,7 @@ class WebSocketHandler(
             ChatResponse(
                 message = message,
                 name = name,
-                createAt = LocalDateTime.now()
+                cratedAt = LocalDateTime.now()
             )
         }
 
