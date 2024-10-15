@@ -3,7 +3,7 @@ package kotlin_repo.prac.config.handler
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlin_repo.prac.common.ChatRequest
 import kotlin_repo.prac.common.ChatResponse
-import kotlin_repo.prac.domain.repository.Chat
+import kotlin_repo.prac.domain.Chat
 import kotlin_repo.prac.domain.repository.ChatRepository
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.CloseStatus

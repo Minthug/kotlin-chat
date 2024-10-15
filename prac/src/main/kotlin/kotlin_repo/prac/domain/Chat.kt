@@ -1,4 +1,4 @@
-package kotlin_repo.prac.domain.repository
+package kotlin_repo.prac.domain
 
 import jakarta.persistence.Column
 import jakarta.persistence.Id
